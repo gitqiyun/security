@@ -3,5 +3,3 @@ spring:
     name: security
 server:
   port: 9001
-logging:
-  path: D:/nmyslog/nmys

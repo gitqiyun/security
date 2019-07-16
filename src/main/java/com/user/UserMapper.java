@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserMapper {
     User findUserByLoginName(String username){
-        User user=new User();
+        User user=null;
         if("admin".equals(username)){
+            user=new User();
             user.setUsername(username);
             //注册时密码加密要与spirng security配置中心配置的加密方式一致
             user.setPassword(new BCryptPasswordEncoder().encode("123456"));
         }
         return user;
+
     }
 }
