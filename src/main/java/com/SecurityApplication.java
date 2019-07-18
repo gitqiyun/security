@@ -18,6 +18,19 @@ public class SecurityApplication {
     public String hello(){
        return "security hello";
     }
+    @GetMapping("/admin/hello")
+    public String admin(){
+        return "admin hello";
+    }
+    @GetMapping("/user/hello")
+    public String user(){
+        return "user hello";
+    }
+    @GetMapping("/visitor/hello")
+    public String visitor(){
+        return "visitor hello";
+    }
+
 
     public static void main(String[] args) {
         SpringApplication.run(SecurityApplication.class,args);
