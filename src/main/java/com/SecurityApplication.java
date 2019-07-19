@@ -1,7 +1,9 @@
 package com;
 
+import com.security.util.SessionContextHolder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +32,15 @@ public class SecurityApplication {
     public String visitor(){
         return "visitor hello";
     }
+    @GetMapping("/userInfo")
+    public String getUserInfo(){
+        User user= SessionContextHolder.getCurrentUser();
+        return user.toString();
+    }
+
+
+
+
 
 
     public static void main(String[] args) {
