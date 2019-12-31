@@ -25,6 +25,7 @@ public class SessionContextHolder {
          *
          * 原理过程：每个请求即一个线程进入应用，都会根据session等相关值封装成authentication保存到SecurityContext，再将
          * SecurityContext保存到SecurityContextHolder中的，相当一个map，当前线程作为主键，当前的SecurityContext作为值
+         * (具体是Threadlocal实现的)
          *
          * 请求request进入系统，从request中获取session,从session获取上下文SecurityContext，如果没有登录则登录将用户信息封装为
          * authentication，将SecurityContext保存到SecurityContextHolder中，相当一个map，当前线程作为主键，当前的SecurityContext作为值
